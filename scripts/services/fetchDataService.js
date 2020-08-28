@@ -8,7 +8,7 @@ angular.module('app')
                 this.token = sessionStorage.getItem("_t");
 
                 var headerDict = {
-                    'x-auth-token': this.token
+                    'x-auth-token': sessionStorage.getItem("_t")
                 }
 
                 var requestOptions = {
