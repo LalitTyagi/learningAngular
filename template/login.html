@@ -1,0 +1,15 @@
+<div class="f1" ng-controller="loginController">
+
+    <form class="f1__form" ng-submit="login()">
+        <label for="email">Email</label>
+        <input type="email" name="email" ng-model="email"/>
+
+        <label for="pass">Password</label>
+        <input type="password" name="password" ng-model="password"/>
+
+        <input type="checkbox" checked={isChecked} id="rememberMe" name="lsRememberMe" />
+        <label for="rememberMe">Remember me</label>
+
+        <input type="submit" value="Login" ng-submit="login()"/>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+<div ng-controller="homeController">
+    <h1>Home</h1>
+    <div className="header">
+        <div className="header-right">
+            <ul>
+                <li ng-click="changeTab('dR')">Date Range</li>
+                <li ng-click="changeTab('t')">Table</li>
+                <li ng-click="changeTab('fC')">First Chart</li>
+                <li ng-click="changeTab('sC')">Second Chart</li>
+            </ul>
+            <hr>
+            <div ng-show="showDateRange">
+                <center ng-init="firstFunction(this)"">{{startDate[1]+" "+startDate[0]+","+startDate[2]}} - {{endDate[1]+" "+endDate[0]+","+endDate[2]}}</center>
+            </div>
+            <div ng-show=" showTable" ng-controller="table">
+                <center ng-init="firstFunction(this)"">{{tableText}}</center>
+                <table>
+                    <tr>
+                        <th>Publisher Id</th>
+                        <th>Impressions Offered</th>
+                    </tr>
+                    <tr ng-repeat=" i in tableDate">
+                        <td>{{i.publisherId}}</td>
+                        <td>{{i.impressions_offered}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div ng-show=" showFirstChart" ng-controller="firstChart">
+                <center ng-init="firstFunction(this)"">{{firstChartText}}</center>
+                <table>
+                    <tr>
+                        <th>App Site Id</th>
+                        <th>Impressions Offered</th>
+                    </tr>
+                    <tr ng-repeat=" i in firstChartData">
+                        <td>{{i.appSiteId}}</td>
+                        <td>{{i.impressions_offered}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div ng-show=" showSecondChart" ng-controller="secondChart">
+                <center ng-init="firstFunction(this)"">{{secondChartText}}</center>
+                <table>
+                    <tr>
+                        <th>Advertiser Id</th>
+                        <th>CM001</th>
+                        <th>Impressions Offered</th>
+                    </tr>
+                    <tr ng-repeat=" i in secondChartData">
+                        <td>{{i.advertiserId}}</td>
+                        <td>{{i.CM001}}</td>
+                        <td>{{i.CM001_percent}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
